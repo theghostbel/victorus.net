@@ -1,0 +1,22 @@
+{
+  "name": "victorus.net",
+  "description": "",
+  "scripts": {
+  },
+  "env": {
+    "NEW_RELIC_LICENSE_KEY": {
+      "required": true
+    },
+    "NEW_RELIC_LOG": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+    "newrelic"
+  ],
+  "buildpacks": [
+
+  ]
+}

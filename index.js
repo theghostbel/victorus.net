@@ -3,15 +3,20 @@ const express = require('express')
 
 const app = express()
 
-app.get('/', function(req, res) {
-  res.send('This is Root homepage')
-});
+const rootRoutes = express.Router()
+rootRoutes.get('/', (req, res) => {
+  res.send('This is ROOT')
+})
 
 const subdomainRoutes = express.Router()
-
-subdomainRoutes.get('/', function(req, res) {
+subdomainRoutes.get('/', (req, res) => {
+  console.log('bmw')
   res.send('This is "BMW App" subdomain')
-});
+})
+
 
 app.use(subdomain('bmw', subdomainRoutes))
+
+app.use('/', rootRoutes)
+
 app.listen(process.env.PORT || 5000)

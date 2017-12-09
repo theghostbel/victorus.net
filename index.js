@@ -10,12 +10,11 @@ rootRoutes.get('/', (req, res) => {
 
 const subdomainRoutes = express.Router()
 subdomainRoutes.get('/', (req, res) => {
-  console.log('bmw')
   res.send('This is "BMW App" subdomain')
 })
 
-
-app.use(subdomain('bmw', subdomainRoutes))
+// app.use(subdomain('bmw', subdomainRoutes))
+app.use(subdomain('bmw', express.static('bmw-club-fa-fa')));
 
 app.use('/', rootRoutes)
 

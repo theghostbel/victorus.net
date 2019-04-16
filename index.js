@@ -1,4 +1,4 @@
-﻿const subdomain =  require('express-subdomain')
+const subdomain =  require('express-subdomain')
 const express = require('express')
 
 const app = express()
@@ -15,6 +15,7 @@ subdomainRoutes.get('/', (req, res) => {
 
 // app.use(subdomain('bmw', subdomainRoutes))
 app.use(subdomain('bmw', express.static('bmw-club-fa-fa')));
+app.use(subdomain('slides', express.static('slides')));
 
 app.use('/', rootRoutes)
 
